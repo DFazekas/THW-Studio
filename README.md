@@ -10,7 +10,6 @@
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
-  - [Usage](#usage)
   - [Development Workflow](#development-workflow)
     - [Branching Model](#branching-model)
     - [Pull Requests](#pull-requests)
@@ -33,10 +32,6 @@
 2. Open the project in Unity.
 3. Ensure all dependencies are installed through Unity's Package Manager.
 4. Run the game in the Unity Editor or build for your preferred platform.
-
-## Usage
-
-[Explain how to use the game or any specific features. Provide any additional information necessary for users.]
 
 ## Development Workflow
 
