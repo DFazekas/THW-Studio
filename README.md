@@ -1,20 +1,20 @@
 # THW-Studio
 
-# Project Title
-
 [Include a brief, catchy description of your game.]
 
 ## Table of Contents
 
-- [About](#about)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Development Workflow](#development-workflow)
-  - [Branching Model](#branching-model)
-  - [Pull Requests](#pull-requests)
-- [Contributing](#contributing)
+- [THW-Studio](#thw-studio)
+  - [Table of Contents](#table-of-contents)
+  - [About](#about)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+  - [Usage](#usage)
+  - [Development Workflow](#development-workflow)
+    - [Branching Model](#branching-model)
+    - [Pull Requests](#pull-requests)
+  - [Contributing](#contributing)
 
 ## About
 
