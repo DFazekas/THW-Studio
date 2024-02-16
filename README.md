@@ -1,6 +1,6 @@
 # THW-Studio
 
-[Include a brief, catchy description of your game.]
+The Hard Way studio is a game development company dedicated to telling stories and showing things about courage, valor, heroism, masculinity and selfness.
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@
 
 ## About
 
-[Provide a more detailed overview of your game, its purpose, and any relevant background information.]
+The Night of the troll is a first person shooter about a special ops operator who happens to be of viking descent, who never runs from a fight, who courageously chooses to stay behind and fight hoards of beasts, after the expedition of scientists he was accompanying ran into a troll in the forests of Norway.     
 
 ## Getting Started
 
