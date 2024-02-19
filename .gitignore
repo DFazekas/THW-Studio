@@ -1,0 +1,110 @@
+# === Unity generated files ===
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# === Unity packages ===
+/[Mm]emoryCaptures/
+/[Tt]empCaptures/
+
+# === Rider and Visual Studio ===
+/*.sln
+/*.csproj
+/*.suo
+/*.user
+/*.userprefs
+/*.pidb
+/*.booproj
+/.idea/
+/.vscode/
+
+# === User-specific files ===
+/*.suo
+/*.user
+/*.userprefs
+
+# === Windows image file caches ===
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+
+# === Folder config file ===
+Desktop.ini
+
+# === Recycle Bin used on file shares ===
+$RECYCLE.BIN/
+
+# === VS Code ###
+.vscode/
+
+# === macOS ===
+.DS_Store
+
+# === Rider ===
+.idea/
+
+# === User-specific files ===
+*.suo
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.pidb
+
+# === Windows Installer files ===
+*.cab
+*.msi
+*.msm
+*.msp
+
+# === Windows shortcuts ===
+*.lnk
+
+# === JetBrains Rider ===
+.idea/
+
+# === Rider folders ===
+.idea/
+
+# === Windows Installer files ===
+*.cab
+*.msi
+*.msm
+*.msp
+
+# === Windows shortcuts ===
+*.lnk
+
+# === JetBrains Rider ===
+.idea/
+*.sln.iml
+
+# === User-specific files ===
+*.suo
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.pidb
+
+# === Mono Auto Generated Files ===
+mono_crash.*
+
+# === Documentation folder ===
+Documentation/
+
+# === Compiled Lua ===
+*.lo
+
+# === Compiled TypeScript ===
+*.tsbuildinfo
+
+# === Compiled JavaScript ===
+*.jsb
+
+# === Third-party libraries ===
+## https://github.com/github/gitignore/blob/master/Unity.gitignore
