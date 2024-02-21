@@ -5,9 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
     public float speed = 12f;
-    public float gravityMultiplier = 2f;
-    public float gravityForce = 9.81f;
-    public float gravity = -gravityForce * gravityMultiplier;
+    public float gravityMultiplier;
+    public float gravity = -9.81f * 2f;
     public float jumpHeight = 3f;
 
     public Transform groundCheck;
@@ -34,30 +33,31 @@ public class PlayerMovement : MonoBehaviour {
     void Update() {
 
         //Ground position check relative to self
-        isGrounded = Physics.checkSphere(groundCheck.position, groundDistance, groundMask);
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         //Reset the default velocity
         if (isGrounded && velocity.y < 0) {
 
-            velocity.y = -gravityMultiplier;
+            velocity.y = -2f;
        
         }
 
         //Gets inputs 
         float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
+        float z = Input.GetAxis("Vertical");
+      
 
         //Does math to create the vector for moving the player
         Vector3 move = transform.right * x + transform.forward * z; //(right = red axis, forward = blue axis)
 
         //Move the player
-        controller.Move(move * speed * Time.deltatime);
+        controller.Move(move * speed * Time.deltaTime);
 
         //Check if the player can jump
         if (Input.GetButtonDown("Jump") && isGrounded) {
 
             //Does math so player can jump
-            velocity.y = Mathf.sqrt(jumpHeight * -gravityMultiplier * gravity);
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 
         }
 
