@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
@@ -8,10 +6,14 @@ public class Weapon : MonoBehaviour {
     public Camera playerCamera;
 
     //Shooting settings
-    public bool isShooting; 
+    public bool isShooting;
     public bool readyToShoot;
     bool allowReset = true;
     public float shootingDelay = 0.2f;
+
+    //TODO: Later add option to switch ammo to a hitscan system with all the same settings so guns can be customized
+    //public bool isHitScanWeapon = false;
+    //if(isHitScanWeapon = true){}
 
     //Burst settings
     public int bulletsPerBurst = 3;
@@ -28,8 +30,8 @@ public class Weapon : MonoBehaviour {
     public float bulletPrefabLifeTime = 3f;
 
     //Shooting Modes
-    public enum ShootingMode { 
-    
+    public enum ShootingMode {
+
         Single,
         Burst,
         Auto
@@ -57,16 +59,20 @@ public class Weapon : MonoBehaviour {
         //controls fire mode actually shooting
         if (readyToShoot && isShooting) {
             burstBulletsLeft = bulletsPerBurst;
-            FireWeapon();
+            FireWeaponProjectile();
         }
     }
 
-    private void FireWeapon() {
+    //private void FireWeaponHitscan() { }
+
+    //TODO: Change each step in FireWeaponProjectile to a self contained method
+    private void FireWeaponProjectile() {
 
         //resets shooting state so problems don't occur in the loop
         readyToShoot = false;
 
-        Vector3 shootingDirection = CalculateDirectionAndSpread().normalized;
+        //Calculates direction and spread then applies it to the firing instance 
+        Vector3 shootingDirection = CalculateDirectionAndSpread().normalized; ;
 
         //This spawns the bullet at bulletSpawn location with the default rotation transform position
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
@@ -121,9 +127,14 @@ public class Weapon : MonoBehaviour {
         float x = UnityEngine.Random.Range(-spreadIntensity, spreadIntensity);
         float y = UnityEngine.Random.Range(-spreadIntensity, spreadIntensity);
 
+        Vector3 spreadVector = direction + new Vector3(x, y, 0);
+
         //returns the shooting direction and the spread
-        return direction + new Vector3(x, y, 0);
+        return spreadVector;
     }
+
+
+
 
     //Despawns bullet after some time to improve performance
     private IEnumerator DestroyBulletAfterTime(GameObject bullet, float delay) {
