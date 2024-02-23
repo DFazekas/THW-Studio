@@ -10,18 +10,14 @@ public class Weapon : MonoBehaviour {
     public bool readyToShoot;
     bool allowReset = true;
     public float shootingDelay = 0.2f;
-
-    //TODO: Later add option to switch ammo to a hitscan system with all the same settings so guns can be customized
-    //public bool isHitScanWeapon = false;
-    //if(isHitScanWeapon = true){}
-
+    
     //Burst settings
     public int bulletsPerBurst = 3;
     public int burstBulletsLeft;
     public int currentBurst;
 
     //Spread settings
-    public float spreadIntensity;
+    public float spreadIntensity = 1;
 
     //bullet settings
     public GameObject bulletPrefab;
@@ -37,7 +33,12 @@ public class Weapon : MonoBehaviour {
         Auto
 
     }
+
     public ShootingMode currentShootingMode;
+
+    //TODO: Later add option to switch ammo to a hitscan system with all the same settings so guns can be customized
+    //public bool isHitScanWeapon = false;
+    //if(isHitScanWeapon = true){}
 
     private void Awake() {
         readyToShoot = true;
@@ -45,17 +46,19 @@ public class Weapon : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void LateUpdate() {
 
         //This checks if current shooting mode is auto and makes it so you need to hold down the fire button
         if (currentShootingMode == ShootingMode.Auto) {
             isShooting = Input.GetKey(KeyCode.Mouse0);
         }
+
         //This checks if the shooting mode is single or burst and makes the fire button single press
         else if (currentShootingMode == ShootingMode.Single ||
             currentShootingMode == ShootingMode.Burst) {
             isShooting = Input.GetKeyDown(KeyCode.Mouse0);
         }
+
         //controls fire mode actually shooting
         if (readyToShoot && isShooting) {
             burstBulletsLeft = bulletsPerBurst;
@@ -116,10 +119,12 @@ public class Weapon : MonoBehaviour {
             //when the ray hits something
             targetPoint = hit.point;
         }
+
         else {
             //when the ray misses and goes into the air
             targetPoint = ray.GetPoint(100);
         }
+
         //find distance from bullet spawn to target
         Vector3 direction = targetPoint - bulletSpawn.position;
 
@@ -127,6 +132,7 @@ public class Weapon : MonoBehaviour {
         float x = UnityEngine.Random.Range(-spreadIntensity, spreadIntensity);
         float y = UnityEngine.Random.Range(-spreadIntensity, spreadIntensity);
 
+        //save calculations to a variable to improve readability
         Vector3 spreadVector = direction + new Vector3(x, y, 0);
 
         //returns the shooting direction and the spread
